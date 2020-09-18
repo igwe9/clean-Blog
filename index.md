@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Welcome to  Clean Blog
 
 You can use the [editor on GitHub](https://github.com/igwe9/clean-Blog/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
