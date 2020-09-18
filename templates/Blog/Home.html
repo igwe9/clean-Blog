@@ -1,0 +1,118 @@
+{% extends 'Blog/links.html' %}
+{% load static %}
+<!--    <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}"/> -->
+<!--    <link rel="stylesheet" type="text/css" href="{% static 'styles/base.css' %}"/> -->
+
+{% block content%}
+<div class="container col-md-6">
+    <div class="row">
+      <!-- Blog Entries Column -->
+    {% for post in posts%}
+      <div class="col-md-3">
+        <!-- Blog Post -->
+        <h1 class="my-2 card-header">{{post.title}}</h1>
+        <div class="card mb-2">
+            <!--<h1 class="card-subtitle">{{post.title}}</h1> -->
+            <img class="card-img" src="{{post.image.url}}" height="250rem;" width="2em;" alt="Card image cap">
+
+            <div class="card-body">
+                <h2><a class="card-title">{{post.title}}</a></h2>
+                <p class="card-text">{{post.highlight}}</p>
+                 <a href="post_details" id="{{post.id}}" class="btn btn-primary">Read More →</a>
+            </div>
+
+            <div class="card-footer text-muted">
+                <li class="card-subtitle-item">posted by {{post.author}}</li>
+            </div>
+        </div>
+      </div>
+    {% endfor %}
+
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center mb-3">
+            <li class="page-item">
+                <a class="page-link" href="#">← Older</a>
+            </li>
+            <li class="page-item disabled">
+                <a class="page-link" href="#">Newer →</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+        <!--<div class="container">-->
+        <!--    <div class="columns">-->
+        {% for pic in pics %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img class="card-img-top" src="{{pic.image.url}}" alt="Card-image-cap">
+                <div class="card-body">
+                    <h2><a class="card-title">{{pic.title}}</a></h2>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+<!--    <div class="content">-->
+<!--            <div class="Post_body">-->
+<!--                <div class="Post_image">-->
+<!--                    <img class="img" src="{{post.image.url}}" alt="">-->
+<!--                </div><br>-->
+<!--                <div class="title">{{post.title}}</div><hr>-->
+<!--                <div class="body">{{post.body}}</div><br>-->
+<!--                <div class="author">From {{post.author}}</div>-->
+<!--            </div><hr>-->
+<!--    </div>-->
+
+    <!-- Sidebar Widgets Column -->
+    <div class="col-md-4">
+        <!-- Search Widget -->
+        <div class="card my-5 ">
+            <h5 class="card-header">Search</h5>
+            <div class="card-body">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="button">Go!</button>
+                    </span>
+                </div>
+            </div>
+
+
+            <!-- Categories Widget -->
+            <div class="card my">
+                <h5 class="card-header">Categories</h5>
+                <div class="col-lg-6">
+                    <ul class="list-unstyled mb-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Web Design</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">HTML</a>
+                         </li>
+
+                         <li class="nav-item" >
+                            <a class="nav-link" href="#">Freebies</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-6">
+                    <ul class="list-unstyled mb-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">JavaScript</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">CSS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><strong>Tutorials</strong></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

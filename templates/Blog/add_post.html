@@ -1,0 +1,128 @@
+{% extends "Blog/post_base.html" %}
+{%load static %}
+
+{% block AddPost %}
+<title>Add Post | {{user}}</title>
+<!-- Container -->
+<div id="container">
+
+    
+<!-- Header -->
+ <div id="header">
+     <div id="branding">    
+     <h1 id="site-name"><a href="/admin/">EMINENT BLOG</a></h1>
+     </div>   
+        <div id="user-tools">
+                Welcome,
+                <strong>{{user}}</strong>
+        </div>
+    </div>
+    <!-- END Header -->
+    
+
+    <div class="breadcrumbs">
+        <a class="breadcrumb-item" href="/">Home</a>
+    &rsaquo; <a href="/">Post</a>
+    &rsaquo; <a href="/">Posts</a>
+    <div id="user-tools">
+        <ul class="nav-item">
+            <a class="nav-link" href="/">View Site</a> 
+            <a class="nave-link" href="/account/password_change/">Change password</a> /
+            <a class="nav-link" href="/admin/logout/">Log out</a>
+        </ul>
+    </div>
+</div>
+
+<!-- Content -->
+<div id="content" class="colM">
+<h1>Add post</h1>
+<div id="content-main">
+<form enctype="multipart/form-data" action="index" method="POST" id="post_form" novalidate><input type="hidden" name="csrfmiddlewaretoken" value="MhK5BcdWWWMiuLMSPbD0j9mCoMcCN6fLuCNyNNVlQZ4l9GDHD66cf3npCJy7XKI4">
+<div>
+{% csrf_token %}
+        <fieldset class="module aligned ">
+        <div class="form-row field-title"> <div>
+                    
+        <label class="required" for="id_title">Title:</label>
+                        
+                <input type="text" name="title" class="vTextField" maxlength="50" required id="id_title">
+
+</div>
+            
+</div>
+    
+<div class="form-row field-body">
+                        
+        <div>
+                            
+        <label class="required" for="id_body">Body:</label>
+                        
+        <textarea name="body" cols="40" rows="10" class="vLargeTextField" required id="id_body"></textarea>
+                       
+        </div>
+        
+</div>
+    
+<div class="form-row field-image">
+            
+        <div>
+                        
+        <label class="required" for="id_image">Image:</label>
+                        
+        <input type="file" name="image" accept="image/*" required id="id_image">
+                
+        </div>
+            
+</div>
+    
+<div class="form-row field-author">
+            
+        <div>
+        <label class="required" for="id_author">Author:</label>
+                        
+        <input type="text" name="author" class="vTextField" maxlength="50" required id="id_author">
+        </div>
+            
+</div>
+
+<!--    <div class="form-row field-date">
+            
+            
+        <div>
+                    
+                    
+        <label class="required" for="id_date_0">Date:</label>
+                        
+        <p class="datetime">  Date: <input type="text" name="date_0" class="vDateField" size="10" required id="id_date_0">
+        <br>Time: <input type="text" name="date_1" class="vTimeField" size="8" required id="id_date_1">
+        </p>
+        <input type="submit" value="Save" class="default" name="_save">
+        </div>
+</div>-->    
+</fieldset>
+
+<div class="submit-row">
+<input type="submit" value="Save" class="default" name="_save">
+
+<input type="submit" value="Save and add another" name="_addanother">
+<input type="submit" value="Save and continue editing" name="_continue">
+
+</div>
+    
+    <script type="text/javascript"
+            id="django-admin-form-add-constants"
+            src="/static/admin/js/change_form.js"
+                 data-model-name="post">
+    </script>
+
+<script type="text/javascript"
+        id="django-admin-prepopulated-fields-constants"
+        src="/static/admin/js/prepopulate_init.js"
+        data-prepopulated-fields="[]">
+</script>
+
+</div>
+</form></div>
+            <br class="clear">
+    </div>
+{% endblock %}

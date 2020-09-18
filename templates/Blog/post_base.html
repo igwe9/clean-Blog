@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en-us" >
+<head>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
+{% comment %} <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css"/> {% endcomment %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css"/>
+
+
+<script type="text/javascript" src="/admin/jsi18n/"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script type="text/javascript" src="/static/admin/js/calendar.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/DateTimeShortcuts.js"></script>
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.js"></script>
+<script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+<script type="text/javascript" src="/static/admin/js/prepopulate.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+    
+
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+
+
+<body class=" app-POST model-post change-form"
+  data-admin-utc-offset="0">
+{% block AddPost %}
+
+{% endblock%}
+  <!-- END Content -->
+  <footer class="py-3 bg-secondary">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright © Eminent 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+  <!-- END Container -->
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Eminent Blog">
+  <meta name="author" content="Emmanuel">
+  <title> {{title}} </title>
+{% block bootstrap.links %} {% endblock %}
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-green fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">EMINENT | BLOG</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+
+          <li class="nav-item">
+            <a class="nav-link" href="Add_post"> Add Post </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="admin">Settings</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link"> Welcome {{user}} </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+<!--{% block content %}-->
+
+
+<!--{% endblock %}-->
+
+  <footer class="py-3 bg-green">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright © Eminent 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+
+</body>
+</html>

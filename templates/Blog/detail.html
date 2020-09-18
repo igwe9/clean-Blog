@@ -1,0 +1,55 @@
+{% extends 'links.html'%}
+{% block content %}
+
+<header class="masthead" {% if posts.image.url != '' %} style="background-image: url('{{posts.image.url}}')" {% else %} style="background:radial-gradient(red,skyblue,red)" {% endif %}>
+    <div class="overlay"></div>
+      <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+              <div class="site-heading">
+                <h1>Clean Blog</h1>
+                <span class="subheading">{{ posts.title }}</span>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="jumbotron display-5" style="background-color:ghostwhite;">
+      <div class="col-lg-8 col-md-10 mx-auto">
+          {% if posts.image.url != '' %}
+            <img  width="300px" height="200px" src="{{posts.image.url}}" alt="card image cap">
+          {% else %} {% endif %}
+
+          <div class="post-preview">
+              <a href="{% url 'detail' posts.slug %}">
+                <h2 class="post-title">
+                  {{posts.title}}
+                </h2></a><br>
+                  <h5 class="post-subtitle">
+                      {{posts.highlight}}
+                  </h5><hr>
+                <post>
+                    {{posts.body}}
+                </post>
+          </div>
+
+      </div>
+    </div>
+<!--    <div class="jumbotron">-->
+<!--        <div class="container">-->
+<!--            <h1 class="">-->
+<!--               <h5 class="post-subtitle">-->
+<!--                  {{posts.highlight}}-->
+<!--               </h5>-->
+<!--                <p class="post-meta">Posted by-->
+<!--                <a href="#">{{posts.author}}</a>-->
+<!--                on {{posts.pub_date}}</p>-->
+<!--            </h1>-->
+<!--    </div>-->
+    <a href="/">Back</a>
+<!--    </div>-->
+</div>
+{% endblock %}
